@@ -1,37 +1,53 @@
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="py-20 bg-gray-100 dark:bg-gray-900 text-center"
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black dark:text-white">
-        Get In <span className="text-blue-500">Touch</span>
-      </h2>
+    <section id="contact" className="py-24 px-6">
+      <div className="max-w-4xl mx-auto text-center">
 
-      <p className="text-gray-600 dark:text-gray-400 mb-8">
-        I’m open to internships, full-time roles, and freelance projects.
-      </p>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-gray-100"
+        >
+          Get In <span className="gradient-text">Touch</span>
+        </motion.h2>
 
-      <div className="flex justify-center gap-6 text-2xl">
-        <a href="mailto:aamirirfu@gmail.com" className="text-blue-500">
-          <FaEnvelope />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/mohammedaamirjeelani/"
-          target="_blank"
-          className="text-blue-500"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="https://github.com/aamirjilu2"
-          target="_blank"
-          className="text-blue-500"
-        >
-          <FaGithub />
-        </a>
+        <p className="text-lg mb-10 text-slate-700 dark:text-gray-400">
+          I’m open to internships, full-time roles, and freelance opportunities.
+        </p>
+
+        <div className="flex justify-center gap-6">
+          <motion.a
+            whileHover={{ scale: 1.15 }}
+            href="mailto:aamirirfu@gmail.com"
+            className="glass p-4 text-primary text-2xl"
+          >
+            <FaEnvelope />
+          </motion.a>
+
+          <motion.a
+            whileHover={{ scale: 1.15 }}
+            href="https://www.linkedin.com/in/mohammedaamirjeelani/"
+            target="_blank"
+            className="glass p-4 text-primary text-2xl"
+          >
+            <FaLinkedin />
+          </motion.a>
+
+          <motion.a
+            whileHover={{ scale: 1.15 }}
+            href="https://github.com/aamirjilu2"
+            target="_blank"
+            className="glass p-4 text-primary text-2xl"
+          >
+            <FaGithub />
+          </motion.a>
+        </div>
+
       </div>
     </section>
   );

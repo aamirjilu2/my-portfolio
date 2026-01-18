@@ -11,7 +11,12 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
+    <div className="
+      min-h-screen
+      bg-lightbg text-slate-900
+      dark:bg-darkbg dark:text-gray-200
+      transition-colors duration-300
+    ">
       <Navbar />
       <Hero />
       <About />
@@ -19,10 +24,10 @@ function App() {
       <Projects />
       <Internships />
       <Certificates />
-      <Contact /> 
+      <Contact />
       <Experience />
       <Footer />
-      </>
+    </div>
   );
 }
 
