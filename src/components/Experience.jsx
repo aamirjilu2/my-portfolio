@@ -13,11 +13,17 @@ export default function Experience() {
       desc: "Developed an AI-based mobile app using CNN and TensorFlow for skin disease prediction.",
     },
     {
-      title: "B.Sc Computer Science",
-      place: "KSRCT College",
-      time: "2021 – 2024",
-      desc: "Studied core computer science subjects including programming, databases, and software engineering.",
-    },
+      title: "B.Tech – Information Technology",
+      place: "K.S. Rangasamy College of Technology (Anna University)",
+      time: "2020 – 2024",
+      desc: "Completed B.Tech in Information Technology with a strong foundation in programming, databases, web development, and software engineering.",
+    },    
+    {
+      title: "Diploma – Computer Science Engineering",
+      place: "Government Polytechnic College, Uthangarai",
+      time: "2017 – 2020",
+      desc: "Completed diploma in Computer Science Engineering with focus on programming fundamentals and practical lab work.",
+    },  
   ];
 
   return (
