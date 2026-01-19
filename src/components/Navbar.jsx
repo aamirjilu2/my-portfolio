@@ -1,13 +1,44 @@
+import { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("about");
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+
+      ["about", "skills", "projects", "contact"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= 140 && rect.bottom >= 140) {
+          setActive(id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl">
-      <div className="glass flex items-center justify-between px-6 py-3 backdrop-blur-xl">
-        
+    <nav
+      className={`
+        fixed left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl transition-all duration-300
+        ${scrolled ? "top-2" : "top-4"}
+      `}
+    >
+      <div
+        className={`
+          glass backdrop-blur-xl flex items-center justify-between px-6 transition-all duration-300
+          ${scrolled ? "py-2" : "py-3"}
+        `}
+      >
         {/* LOGO */}
         <h1 className="text-lg md:text-xl font-bold tracking-wide text-slate-900 dark:text-gray-200">
           <span className="gradient-text">Mohammed</span>{" "}
@@ -20,14 +51,22 @@ export default function Navbar() {
             <a
               key={item}
               href={`#${item}`}
-              className="
-                relative group
-                text-slate-900
-                dark:text-gray-300
-              "
+              className={`
+                relative transition
+                ${
+                  active === item
+                    ? "text-primary"
+                    : "text-slate-900 dark:text-gray-300"
+                }
+              `}
             >
               {item.toUpperCase()}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all group-hover:w-full"></span>
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-[2px] bg-primary transition-all
+                  ${active === item ? "w-full" : "w-0"}
+                `}
+              />
             </a>
           ))}
         </div>
@@ -38,8 +77,7 @@ export default function Navbar() {
           className="
             flex items-center justify-center
             w-10 h-10 rounded-full glass
-            text-slate-900
-            dark:text-gray-200
+            text-slate-900 dark:text-gray-200
             hover:glow transition
           "
           aria-label="Toggle Theme"
