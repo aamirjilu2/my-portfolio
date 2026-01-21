@@ -42,7 +42,7 @@ const timeline = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6">
+    <section id="experience" className="py-20 min-h-[70vh] bg-white dark:bg-black">
       <div className="max-w-5xl mx-auto">
 
         <motion.h2

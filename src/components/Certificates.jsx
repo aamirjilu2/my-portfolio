@@ -28,7 +28,7 @@ export default function Certificates() {
   ];
 
   return (
-    <section id="certificates" className="py-20 bg-white dark:bg-black">
+    <section id="certificates" className="py-20 min-h-[70vh] bg-white dark:bg-black">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black dark:text-white">
           <span className="text-blue-500">Certificates</span>

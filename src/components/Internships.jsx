@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Internships() {
   return (
-    <section id="internships" className="py-24 px-6">
+    <section id="internships" className="py-20 min-h-[70vh] bg-gray-100 dark:bg-gray-900">
       <div className="max-w-5xl mx-auto">
 
         <motion.h2

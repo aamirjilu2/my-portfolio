@@ -3,51 +3,62 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-
-        <motion.h2
+    <section
+      id="contact"
+      className="
+        py-24 min-h-[80vh]
+        bg-gray-50 text-black
+        dark:bg-black dark:text-white
+      "
+    >
+      <div className="max-w-4xl mx-auto px-6">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-gray-100"
+          className="
+            rounded-3xl p-12 text-center
+            bg-white text-black shadow-xl
+            dark:bg-white/10 dark:text-white
+            dark:backdrop-blur-xl
+            dark:border dark:border-white/10
+          "
         >
-          Get In <span className="gradient-text">Touch</span>
-        </motion.h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Let’s <span className="text-primary">Work Together</span>
+          </h2>
 
-        <p className="text-lg mb-10 text-slate-700 dark:text-gray-400">
-          I’m open to internships, full-time roles, and freelance opportunities.
-        </p>
+          <p className="text-gray-600 dark:text-gray-400 mb-10 text-lg">
+            I’m open to full-time roles, internships & freelance projects.
+            Let’s build something impactful 🚀
+          </p>
 
-        <div className="flex justify-center gap-6">
-          <motion.a
-            whileHover={{ scale: 1.15 }}
-            href="mailto:aamirirfu@gmail.com"
-            className="glass p-4 text-primary text-2xl"
-          >
-            <FaEnvelope />
-          </motion.a>
+          <div className="flex justify-center gap-10 text-3xl text-gray-600 dark:text-gray-300">
+            <a
+              href="mailto:aamirirfu@gmail.com"
+              className="hover:text-primary hover:scale-110 transition"
+            >
+              <FaEnvelope />
+            </a>
 
-          <motion.a
-            whileHover={{ scale: 1.15 }}
-            href="https://www.linkedin.com/in/mohammedaamirjeelani/"
-            target="_blank"
-            className="glass p-4 text-primary text-2xl"
-          >
-            <FaLinkedin />
-          </motion.a>
+            <a
+              href="https://www.linkedin.com/in/mohammedaamirjeelani/"
+              target="_blank"
+              className="hover:text-primary hover:scale-110 transition"
+            >
+              <FaLinkedin />
+            </a>
 
-          <motion.a
-            whileHover={{ scale: 1.15 }}
-            href="https://github.com/aamirjilu2"
-            target="_blank"
-            className="glass p-4 text-primary text-2xl"
-          >
-            <FaGithub />
-          </motion.a>
-        </div>
-
+            <a
+              href="https://github.com/aamirjilu2"
+              target="_blank"
+              className="hover:text-primary hover:scale-110 transition"
+            >
+              <FaGithub />
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
