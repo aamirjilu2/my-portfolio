@@ -7,7 +7,9 @@ import Internships from "./components/Internships";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 import Footer from "./components/Footer";
+import FloatingAIChat from "./components/FloatingAIChat";
 
 function App() {
   return (
@@ -26,7 +28,11 @@ function App() {
       <Experience />
       <Certificates />
       <Contact />
+      <WhatsAppFloat />
       <Footer />
+
+      {/* Floating AI Assistant */}
+      <FloatingAIChat />
     </div>
   );
 }
