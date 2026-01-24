@@ -21,23 +21,40 @@ export default function Internships() {
 
         <div className="grid md:grid-cols-2 gap-8">
 
-          {/* Cyber Security Internship */}
-          <motion.div
-            whileHover={{ y: -6 }}
-            transition={{ duration: 0.3 }}
-            className="glass p-6"
-          >
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-gray-100">
-              Cyber Security Intern (Blue Team)
-            </h3>
-            <p className="text-sm text-slate-600 dark:text-gray-400">
-              Tutelr • 2023 – 2024
-            </p>
-            <p className="mt-3 text-slate-700 dark:text-gray-300">
-              Worked on Blue Team operations including threat analysis, security
-              monitoring, and incident response activities.
-            </p>
-          </motion.div>
+         {/* Cyber Security Internship */}
+        <motion.div
+          whileHover={{ y: -6 }}
+          transition={{ duration: 0.3 }}
+          className="glass p-6"
+        >
+          <h3 className="text-xl font-semibold text-slate-900 dark:text-gray-100">
+            Cyber Security Intern (Blue Team)
+          </h3>
+
+          <p className="text-sm text-slate-600 dark:text-gray-400">
+            Tutelr • 2023 – 2024
+          </p>
+
+          <p className="mt-3 text-slate-700 dark:text-gray-300">
+            Worked on Blue Team operations including threat analysis, security
+            monitoring, and incident response activities.
+          </p>
+
+          <ul className="mt-3 list-disc list-inside text-slate-700 dark:text-gray-300 space-y-1">
+            <li>
+              Completed <strong>CHAPS (Cyber Hygiene & Protection System)</strong>
+              based hands-on security project.
+            </li>
+            <li>
+              Performed basic <strong>log analysis</strong>, threat identification,
+              and security assessment exercises.
+            </li>
+            <li>
+              Learned and applied cybersecurity best practices and Blue Team
+              fundamentals.
+            </li>
+          </ul>
+        </motion.div>
 
           {/* Web Development Internship */}
           <motion.div
