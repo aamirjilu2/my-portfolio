@@ -1,182 +1,82 @@
+import { motion } from "framer-motion";
+
+const certs = [
+  { title:"Artificial Intelligence Programmer", org:"TN Skill Corporation — Govt of Tamil Nadu", meta:"300 Hours", desc:"Hands-on AI training — Python, ML, ANN, Computer Vision, Model Interpretability.", projects:["Employee Attrition Prediction via ANN","Face Mask Detection — CV","SHAP Model Interpretability"], link:"https://drive.google.com/file/d/1LhyeYGWcAfELr5oawTvgyCPlrAkzXtBK/view?usp=sharing" },
+  { title:"Cyber Security Internship — DFIR & Blue Team", org:"Tutler Infinity Internships", link:"https://drive.google.com/file/d/1TOT0nFZBoeKUayoUFS1WFkpxI5RbqrO-/view?usp=sharing" },
+  { title:"Cybersecurity Analyst Job Simulation", org:"TATA Group · Forage", link:"https://drive.google.com/file/d/1R-7O5y8V-AEKy7PdS6jVA-dim6ldivrE/view?usp=sharing" },
+  { title:"Advanced Software Engineering Job Simulation", org:"Walmart Global Tech · Forage", link:"https://drive.google.com/file/d/1li9fV1GMAMnqYgymG79rYX-R8JlU9jUl/view?usp=sharing" },
+  { title:"AWS Cloud Practitioner Essentials", org:"Amazon Web Services", link:"https://drive.google.com/file/d/1SEVJX89WD4VIsSzfCZwvWGYCBQDUflQJ/view?usp=sharing" },
+];
+const training = [
+  { title:"DevOps Engineering — Placement Guarantee Program", org:"LinuxWorld Informatics Pvt. Ltd.", desc:"Linux, Git, Docker, CI/CD, cloud-native concepts. Certificate pending." },
+  { title:"Kubernetes Fundamentals — Workshop (8 hrs)", org:"LinuxWorld", desc:"Container orchestration and Kubernetes production patterns. Certificate pending." },
+];
+
 export default function Certificates() {
-  const certificates = [
-    {
-      title: "Artificial Intelligence Programmer – TN Skill Corporation (300 hrs)",
-      org: "TN Skill Corporation (Government of Tamil Nadu)",
-      desc: "Industry-oriented AI training with hands-on Python & Machine Learning projects.",
-      projects: [
-        "Employee Attrition Prediction using Artificial Neural Networks (ANN)",
-        "Face Mask Detection using Computer Vision",
-        "SHAP (SHapley Additive Explanations) Model Interpretability Project",
-      ],
-      link: "https://drive.google.com/file/d/1LhyeYGWcAfELr5oawTvgyCPlrAkzXtBK/view?usp=sharing",
-    },
-    {
-      title: "Cyber Security Internship – DFIR & Blue Team",
-      org: "Tutler Infinity Internships",
-      link: "https://drive.google.com/file/d/1TOT0nFZBoeKUayoUFS1WFkpxI5RbqrO-/view?usp=sharing",
-    },
-    {
-      title: "Cybersecurity Analyst Job Simulation",
-      org: "TATA Group (Forage)",
-      link: "https://drive.google.com/file/d/1R-7O5y8V-AEKy7PdS6jVA-dim6ldivrE/view?usp=sharing",
-    },
-    {
-      title: "Advanced Software Engineering Job Simulation",
-      org: "Walmart Global Tech (Forage)",
-      link: "https://drive.google.com/file/d/1li9fV1GMAMnqYgymG79rYX-R8JlU9jUl/view?usp=sharing",
-    },
-    {
-      title: "AWS Cloud Practitioner Essentials",
-      org: "Amazon Web Services (AWS)",
-      link: "https://drive.google.com/file/d/1SEVJX89WD4VIsSzfCZwvWGYCBQDUflQJ/view?usp=sharing",
-    },
-  ];
-
   return (
-    <section id="certificates" className="py-20 min-h-[70vh] bg-white dark:bg-black">
-      <div className="max-w-5xl mx-auto px-6">
+    <section id="certificates" className="sec-pad" style={{ background:"var(--bg2)" }}>
+      <div style={{ maxWidth:"1100px", margin:"0 auto" }}>
 
-        {/* 🔹 STRONGER HEADING */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black dark:text-white">
-          <span className="text-blue-500">Certificates & Training</span>
-        </h2>
+        <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} transition={{ duration:.6 }} viewport={{ once:true }} style={{ marginBottom:"48px", position:"relative" }}>
+          <div className="label" style={{ marginBottom:"14px" }}>Credentials</div>
+          <h2 className="f-display" style={{ fontSize:"clamp(1.8rem,3vw,3rem)", color:"var(--text)", letterSpacing:"-0.02em", fontStyle:"italic" }}>
+            Certificates &amp; <span className="teal-text">Training</span>
+          </h2>
+          <span className="sec-num">05</span>
+        </motion.div>
 
-        <div className="space-y-6">
-          {certificates.map((cert, index) => (
-            <div
-              key={index}
-              className="
-                group relative overflow-hidden
-                p-6 rounded-xl
-                bg-gray-100 dark:bg-gray-900
-                border border-gray-200 dark:border-gray-800
-                transition-all duration-300
-                hover:-translate-y-1 hover:shadow-xl
-              "
-            >
-              {/* LEFT ACCENT BAR */}
-              <span className="absolute left-0 top-0 h-full w-1 bg-blue-500"></span>
-
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-black dark:text-white">
-                    {cert.title}
-                  </h3>
-
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    {cert.org}
+        <div style={{ display:"flex", flexDirection:"column", gap:"12px", marginBottom:"40px" }}>
+          {certs.map((c,i) => (
+            <motion.div key={i}
+              initial={{ opacity:0, y:16 }} whileInView={{ opacity:1, y:0 }}
+              transition={{ duration:.4, delay:i*0.07 }} viewport={{ once:true }}
+              style={{ position:"relative", background:"var(--surface)", border:"1px solid var(--border)", borderRadius:"10px", overflow:"hidden", transition:"all .3s" }}
+              onMouseEnter={e=>{e.currentTarget.style.borderColor="var(--teal-bdr)";e.currentTarget.style.transform="translateY(-2px)";}}
+              onMouseLeave={e=>{e.currentTarget.style.borderColor="var(--border)";e.currentTarget.style.transform="none";}}>
+              {/* Left accent bar */}
+              <div style={{ position:"absolute", left:0, top:0, bottom:0, width:"3px", background:"var(--teal)", opacity:.7 }}/>
+              <div className="cert-row" style={{ display:"flex", flexWrap:"wrap", alignItems:"flex-start", justifyContent:"space-between", gap:"14px", padding:"20px 22px 20px 26px" }}>
+                <div style={{ flex:"1 1 200px", minWidth:0 }}>
+                  <h3 style={{ fontSize:"clamp(0.85rem,2vw,0.95rem)", fontWeight:600, color:"var(--text)", marginBottom:"4px" }}>{c.title}</h3>
+                  <p style={{ fontFamily:"JetBrains Mono,monospace", fontSize:"0.62rem", color:"var(--teal)", letterSpacing:"0.07em", marginBottom:c.desc||c.projects?"10px":"0" }}>
+                    {c.org}{c.meta?` · ${c.meta}`:""}
                   </p>
-
-                  {cert.desc && (
-                    <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-                      {cert.desc}
-                    </p>
-                  )}
-
-                  {/* 🔹 AI PROJECT LABEL */}
-                  {cert.projects && (
-                    <>
-                      <p className="mt-2 text-xs font-semibold text-blue-500">
-                        Key Academic Projects
-                      </p>
-
-                      <ul className="mt-2 list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
-                        {cert.projects.map((project, i) => (
-                          <li key={i}>{project}</li>
-                        ))}
-                      </ul>
-                    </>
+                  {c.desc && <p style={{ fontSize:"0.83rem", color:"var(--text2)", lineHeight:1.65 }}>{c.desc}</p>}
+                  {c.projects && (
+                    <ul style={{ marginTop:"8px", display:"flex", flexDirection:"column", gap:"5px" }}>
+                      {c.projects.map((p,j) => (
+                        <li key={j} style={{ display:"flex", gap:"8px", fontSize:"0.8rem", color:"var(--text2)" }}>
+                          <span style={{ color:"var(--teal)" }}>→</span>{p}
+                        </li>
+                      ))}
+                    </ul>
                   )}
                 </div>
-
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    inline-flex items-center justify-center
-                    px-4 py-2 rounded-lg
-                    text-sm font-semibold
-                    text-blue-600 dark:text-blue-400
-                    border border-blue-500/40
-                    hover:bg-blue-500 hover:text-white
-                    transition whitespace-nowrap
-                  "
-                >
-                  View Certificate ↗
+                <a href={c.link} target="_blank" rel="noreferrer" className="btn-ghost" style={{ padding:"7px 16px", fontSize:"0.7rem", flexShrink:0, alignSelf:"flex-start", whiteSpace:"nowrap" }}>
+                  View ↗
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* 🔹 TRAINING & COURSEWORK */}
-<div className="mt-16">
-  <h3 className="text-2xl font-bold text-center mb-10 text-black dark:text-white">
-    Training & <span className="text-blue-500">Coursework</span>
-  </h3>
+        <div className="label" style={{ marginBottom:"18px" }}>Additional Coursework</div>
+        <div style={{ display:"flex", flexDirection:"column", gap:"12px" }}>
+          {training.map((t,i) => (
+            <motion.div key={i}
+              initial={{ opacity:0, y:14 }} whileInView={{ opacity:1, y:0 }}
+              transition={{ duration:.4, delay:i*0.08 }} viewport={{ once:true }}
+              style={{ position:"relative", background:"var(--surface)", border:"1px solid var(--border)", borderRadius:"10px", padding:"18px 22px 18px 26px", overflow:"hidden" }}>
+              <div style={{ position:"absolute", left:0, top:0, bottom:0, width:"3px", background:"var(--teal)", opacity:.3 }}/>
+              <h3 style={{ fontSize:"0.9rem", fontWeight:600, color:"var(--text)", marginBottom:"4px" }}>{t.title}</h3>
+              <p style={{ fontFamily:"JetBrains Mono,monospace", fontSize:"0.63rem", color:"var(--teal)", letterSpacing:"0.07em", marginBottom:"8px" }}>{t.org}</p>
+              <p style={{ fontSize:"0.83rem", color:"var(--text2)", lineHeight:1.65 }}>{t.desc}</p>
+            </motion.div>
+          ))}
+        </div>
 
-  <div className="space-y-6">
-    {/* DevOps Training */}
-    <div
-      className="
-        group relative overflow-hidden
-        p-6 rounded-xl
-        bg-gray-50 dark:bg-gray-900
-        border border-gray-200 dark:border-gray-800
-        transition-all duration-300
-        hover:-translate-y-1 hover:shadow-xl
-      "
-    >
-      <span className="absolute left-0 top-0 h-full w-1 bg-blue-500"></span>
-
-      <h4 className="text-lg font-semibold text-black dark:text-white">
-        DevOps Engineering – Placement Guarantee Program
-      </h4>
-      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-        LinuxWorld Informatics Pvt. Ltd.
-      </p>
-      <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-        Completed placement-oriented DevOps training covering Linux, Git,
-        Docker, CI/CD fundamentals, and cloud-native concepts.
-      </p>
-      <p className="mt-1 text-xs text-gray-500 dark:text-gray-500">
-        Certificate pending from training provider.
-      </p>
-    </div>
-
-    {/* Kubernetes Workshop */}
-    <div
-      className="
-        group relative overflow-hidden
-        p-6 rounded-xl
-        bg-gray-50 dark:bg-gray-900
-        border border-gray-200 dark:border-gray-800
-        transition-all duration-300
-        hover:-translate-y-1 hover:shadow-xl
-      "
-    >
-      <span className="absolute left-0 top-0 h-full w-1 bg-blue-500"></span>
-
-      <h4 className="text-lg font-semibold text-black dark:text-white">
-        Kubernetes Fundamentals – Hands-on Workshop (8 Hours)
-      </h4>
-      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-        LinuxWorld
-      </p>
-      <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-        Attended hands-on workshop covering Kubernetes basics, container
-        orchestration concepts, and real-world use cases.
-      </p>
-      <p className="mt-1 text-xs text-gray-500 dark:text-gray-500">
-        Certificate pending.
-      </p>
-    </div>
-  </div>
-</div>
-        <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
-          Additional certifications and course completions are available upon request.
+        <p style={{ textAlign:"center", marginTop:"32px", fontFamily:"JetBrains Mono,monospace", fontSize:"0.65rem", color:"var(--muted)", letterSpacing:"0.08em" }}>
+          Additional certifications available upon request.
         </p>
       </div>
     </section>
